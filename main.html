@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading…</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        /* LOGO */
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Progress bar wrapper */
+        .progress-wrapper {
+            width: 100%;
+            height: 8px;
+            background: #e6e6e6;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        /* Progress bar fill animation */
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #333;
+            animation: fill 1.2s ease-in-out forwards;
+        }
+
+        @keyframes fill {
+            0%   { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Fallback for JS disabled */
+        noscript .fallback {
+            display: block;
+        }
+
+        .fallback {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Your logo -->
+        <img src="logo black.png" alt="Logo" class="logo">
+
+        <!-- Progress bar -->
+        <div class="progress-wrapper">
+            <div class="progress-bar"></div>
+        </div>
+
+        <!-- No-JS fallback -->
+        <noscript>
+            <div class="fallback">
+                JavaScript is disabled.  
+                <a href="Fortrolla Portfolio.pdf">Click here to open the PDF</a>
+            </div>
+        </noscript>
+    </div>
+
+    <script>
+        // Redirect after progress bar finishes
+        setTimeout(() => {
+            window.location.href = "Fortrolla Portfolio.pdf";
+        }, 1500); // matches animation duration
+    </script>
+
+</body>
+</html>
